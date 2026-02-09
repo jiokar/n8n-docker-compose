@@ -9,8 +9,10 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
+      - TZ=Asia/Tokyo
+      - PGTZ=Asia/Tokyo
     volumes:
-      - n8n_db_data:/var/lib/postgresql/data
+      - n8n_db_data:/var/lib/postgresql
 
   n8n:
     image: n8nio/n8n:2.6.4
